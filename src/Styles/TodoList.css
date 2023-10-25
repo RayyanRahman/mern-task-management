@@ -1,0 +1,161 @@
+/* TodoList.css (or your external CSS file) */
+.todo-list {
+  width: 40vw; /* Set the width to 40% of viewport width */
+  max-width: 60vw; /* Add a maximum width to ensure it's not too wide on larger screens */
+  max-height: 60vh;
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+  padding: 20px;
+  background-color: #112153f0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow-y: scroll;
+  /* overflow: hidden; Ensure content doesn't overflow on small screens */
+}
+
+.todo-list:hover {
+  animation: running-border-shadow 3s linear infinite;
+}
+
+.todo-item:hover {
+  animation: running-border-shadow 3s linear infinite;
+}
+
+.pie-chart-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(146, 242, 234);
+}
+
+canvas {
+  width: 100%; /* Make the canvas responsive */
+  max-width: 250px; /* Set a maximum width of 300px for the pie chart */
+  height: auto; /* Maintain aspect ratio */
+  color: rgb(146, 242, 234);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff;
+}
+
+/* Change the checkbox color */
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d6552a;
+  border-radius: 4px;
+  background-color: white;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50px;
+}
+
+/* Change the checkbox color when checked */
+.checkbox:checked {
+  background-color: #3041f8;
+}
+
+.edit-button,
+.delete-button {
+  background-color: #0c3586;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.edit-button:hover{
+  background-color: #1a86c4;
+}
+.delete-button:hover {
+  background-color: #fb2d2d;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Media query for smaller displays */
+@media screen and (max-width: 500px) {
+  .todo-list {
+    display: block;
+    max-height: 80vh;
+    width: 100vw; /* Set the width to 60% of viewport width for smaller displays */
+  }
+}
+
+/* Media query for smaller displays */
+@media screen and (min-width: 501px) and (max-width: 1050px) {
+  .todo-list {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: 100vw; /* Set the width to 60% of viewport width for smaller displays */
+  }
+}
+
+.lists {
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 350px) {
+  .todo-list {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: 100vw; /* Set the width to 60% of viewport width for smaller displays */
+  }
+
+  .edit-button,
+  .delete-button {
+    font-size: 12px; /* Set a smaller font size for buttons */
+    padding: 4px 8px; /* Reduce button padding */
+  }
+}
+
+/* Define the running border shadow animation */
+@keyframes running-border-shadow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  25% {
+    box-shadow: 5px 0 10px rgba(255, 255, 255, 0.5),
+                0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 5px 0 10px rgba(255, 255, 255, 0.5),
+                0 0 10px rgba(255, 255, 255, 0.5),
+                -5px 0 10px rgba(255, 255, 255, 0.5);
+  }
+  75% {
+    box-shadow: 5px 0 10px rgba(255, 255, 255, 0.5),
+                -5px 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
